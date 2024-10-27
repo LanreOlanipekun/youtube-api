@@ -1,0 +1,374 @@
+{
+    "components": {
+        "examples": {},
+        "headers": {},
+        "parameters": {},
+        "requestBodies": {},
+        "responses": {},
+        "schemas": {
+            "ResponseTypeEnum": {
+                "enum": [
+                    "success",
+                    "failed"
+                ],
+                "type": "string"
+            },
+            "Pick_IVideoSnippet.title-or-description_": {
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "title",
+                    "description"
+                ],
+                "type": "object",
+                "description": "From T, pick a set of properties whose keys are in the union K"
+            },
+            "Pick_IVideoStat.viewCount-or-likeCount_": {
+                "properties": {
+                    "viewCount": {
+                        "type": "string"
+                    },
+                    "likeCount": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "viewCount",
+                    "likeCount"
+                ],
+                "type": "object",
+                "description": "From T, pick a set of properties whose keys are in the union K"
+            },
+            "SuccessResponseObject_Pick_IVideoSnippet.title-or-description_-and-Pick_IVideoStat.viewCount-or-likeCount__": {
+                "properties": {
+                    "status": {
+                        "$ref": "#/components/schemas/ResponseTypeEnum"
+                    },
+                    "data": {
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/Pick_IVideoSnippet.title-or-description_"
+                            },
+                            {
+                                "$ref": "#/components/schemas/Pick_IVideoStat.viewCount-or-likeCount_"
+                            }
+                        ]
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "data"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "IPageInfo": {
+                "properties": {
+                    "totalResults": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "resultsPerPage": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "required": [
+                    "totalResults",
+                    "resultsPerPage"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "IVideoComments": {
+                "properties": {
+                    "kind": {
+                        "type": "string"
+                    },
+                    "etag": {
+                        "type": "string"
+                    },
+                    "nextPageToken": {
+                        "type": "string"
+                    },
+                    "pageInfo": {
+                        "$ref": "#/components/schemas/IPageInfo"
+                    },
+                    "items": {
+                        "items": {
+                            "properties": {
+                                "snippet": {
+                                    "properties": {
+                                        "isPublic": {
+                                            "type": "boolean"
+                                        },
+                                        "totalReplyCount": {
+                                            "type": "number",
+                                            "format": "double"
+                                        },
+                                        "canReply": {
+                                            "type": "boolean"
+                                        },
+                                        "topLevelComment": {
+                                            "properties": {
+                                                "snippet": {
+                                                    "properties": {
+                                                        "updatedAt": {
+                                                            "type": "string"
+                                                        },
+                                                        "publishedAt": {
+                                                            "type": "string"
+                                                        },
+                                                        "likeCount": {
+                                                            "type": "number",
+                                                            "format": "double"
+                                                        },
+                                                        "viewerRating": {
+                                                            "type": "string"
+                                                        },
+                                                        "canRate": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "authorChannelId": {
+                                                            "properties": {
+                                                                "value": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "value"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "authorChannelUrl": {
+                                                            "type": "string"
+                                                        },
+                                                        "authorProfileImageUrl": {
+                                                            "type": "string"
+                                                        },
+                                                        "authorDisplayName": {
+                                                            "type": "string"
+                                                        },
+                                                        "textOriginal": {
+                                                            "type": "string"
+                                                        },
+                                                        "textDisplay": {
+                                                            "type": "string"
+                                                        },
+                                                        "videoId": {
+                                                            "type": "string"
+                                                        },
+                                                        "channelId": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "updatedAt",
+                                                        "publishedAt",
+                                                        "likeCount",
+                                                        "viewerRating",
+                                                        "canRate",
+                                                        "authorChannelId",
+                                                        "authorChannelUrl",
+                                                        "authorProfileImageUrl",
+                                                        "authorDisplayName",
+                                                        "textOriginal",
+                                                        "textDisplay",
+                                                        "videoId",
+                                                        "channelId"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "etag": {
+                                                    "type": "string"
+                                                },
+                                                "kind": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "snippet",
+                                                "id",
+                                                "etag",
+                                                "kind"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "videoId": {
+                                            "type": "string"
+                                        },
+                                        "channelId": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "isPublic",
+                                        "totalReplyCount",
+                                        "canReply",
+                                        "topLevelComment",
+                                        "videoId",
+                                        "channelId"
+                                    ],
+                                    "type": "object"
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "etag": {
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "snippet",
+                                "id",
+                                "etag",
+                                "kind"
+                            ],
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "kind",
+                    "etag",
+                    "nextPageToken",
+                    "pageInfo",
+                    "items"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "SuccessResponseObject_IVideoComments_": {
+                "properties": {
+                    "status": {
+                        "$ref": "#/components/schemas/ResponseTypeEnum"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/IVideoComments"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "data"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {
+            "accessToken": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "authorization"
+            }
+        }
+    },
+    "info": {
+        "title": "youtube-api",
+        "version": "1.0.0",
+        "description": "Nodejs-youtube-api",
+        "license": {
+            "name": "ISC"
+        },
+        "contact": {
+            "name": "Olanrewaju Olanipekun"
+        }
+    },
+    "openapi": "3.0.0",
+    "paths": {
+        "/video/{id}": {
+            "get": {
+                "operationId": "GetVideoById",
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessResponseObject_Pick_IVideoSnippet.title-or-description_-and-Pick_IVideoStat.viewCount-or-likeCount__"
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Retrieves a video by its ID.",
+                "tags": [
+                    "Video"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/video/comments/{videoId}": {
+            "get": {
+                "operationId": "GetVideoComments",
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessResponseObject_IVideoComments_"
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Retrieves the comments for a specific video based on the provided video ID and optional page token.",
+                "tags": [
+                    "Video"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "videoId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "pageToken",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "/api"
+        }
+    ]
+}
