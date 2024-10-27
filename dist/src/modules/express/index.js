@@ -33,6 +33,8 @@ const config_1 = __importDefault(require("../../config"));
 const secret_1 = __importDefault(require("../secret"));
 const logger_1 = require("../logger");
 const routes_1 = require("../routes");
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 class Express {
     constructor() {
         this.express = (0, express_1.default)();
@@ -101,7 +103,7 @@ class Express {
             this.mountRoutes();
             this.mountErrorHandlers();
             // Start the server on the specified port
-            this.express.listen(secret_1.default.App.port, () => {
+            this.express.listen(process.env.PORT || secret_1.default.App.port, () => {
                 this.log.info(`Server launched on host: ${secret_1.default.App.host}:${secret_1.default.App.port}`);
             });
         }

@@ -10,6 +10,9 @@ import config from '../../config';
 import Secret from '../secret';
 import { LoggerDecorator, LoggerInterface } from '../logger';
 import { RegisterRoutes, SwaggerJson } from '../routes';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 class Express {
   @LoggerDecorator('Server')
@@ -105,7 +108,7 @@ class Express {
       this.mountErrorHandlers();
 
       // Start the server on the specified port
-      this.express.listen(Secret.App.port, () => {
+      this.express.listen(process.env.PORT || Secret.App.port, () => {
         this.log.info(
           `Server launched on host: ${Secret.App.host}:${Secret.App.port}`
         );
