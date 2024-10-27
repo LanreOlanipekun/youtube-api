@@ -16,11 +16,8 @@ class Secret {
       dotenv.config({ path: '.env' });
       this.log.info('Environment variables have been loaded successfully.');
     } else {
-      const err = new Error(
-        'Could not find .env file to supply config environment variables.'
-      );
-      this.log.error(err.message);
-      throw err;
+      dotenv.config();
+      this.log.info('Loading env variables');
     }
   }
 
@@ -29,7 +26,7 @@ class Secret {
       dotenv.config({ path: '.env' });
       this.log.info('Environment variables have been loaded successfully.');
     } else {
-      dotenv.config({ path: '.env' });
+      dotenv.config();
       this.log.info('Loading env variables');
     }
   }
