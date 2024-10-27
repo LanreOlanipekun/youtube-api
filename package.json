@@ -6,10 +6,11 @@
   "scripts": {
     "start": "node ./dist/index",
     "dev": "npm run build-routes && nodemon index.ts",
-    "build": "npm run build-routes && tsc",
+    "build": "npm run build-routes && tsc && npm run copy-logs",
     "build-routes": "tsoa spec-and-routes",
     "test": "jest --detectOpenHandles",
-    "add-build": "git add dist"
+    "add-build": "git add dist",
+    "copy-logs": "cp -R logs dist/"
   },
   "pre-commit": [
     "build",
