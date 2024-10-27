@@ -7,6 +7,6 @@ coverage/
 .vscode/
 
 # Routes and Swagger generation
-src/modules/routes/routes.ts
-src/modules/routes/swagger.json
+# src/modules/routes/routes.ts
+# src/modules/routes/swagger.json
 
