@@ -107,3 +107,7 @@ npm run test
 
 - Node Js
 - TypeScript: A typed superset of JavaScript
+
+## Documentation
+
+Api documentation available at /api/docs
