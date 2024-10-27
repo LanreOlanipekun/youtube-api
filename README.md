@@ -41,7 +41,7 @@ Add the necessary environment variable in the .env file. Check .env.example
 
 1. Development
 
-### Starts the development server with Vite. The app will be accessible at http://localhost:<PORT>
+### Starts the development server. The app will be accessible at http://localhost:<PORT>
 
 #### You can specify your port in the env file. check the .env.example
 
@@ -52,7 +52,7 @@ npm run dev
 
 2. Build
 
-### Builds the app for production. It first compiles TypeScript (tsc -b) and then bundles the project using Vite.
+### Builds the app for production. It builds the routes based on the controller and compile into the dist folder.
 
 ```bash
 npm run build
