@@ -10,7 +10,7 @@
     "build-routes": "tsoa spec-and-routes",
     "test": "jest --detectOpenHandles",
     "add-build": "git add dist",
-    "copy-logs": "cp -R logs dist/"
+    "copy-logs": "cp -R logs dist/src"
   },
   "pre-commit": [
     "build",
