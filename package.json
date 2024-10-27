@@ -1,6 +1,6 @@
 {
   "name": "youtube-api",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Nodejs-youtube-api",
   "main": "index.js",
   "scripts": {
@@ -8,22 +8,14 @@
     "dev": "npm run build-routes && nodemon index.ts",
     "build": "npm run build-routes && tsc",
     "build-routes": "tsoa spec-and-routes",
-    "test": "jest --detectOpenHandles",
-    "seed": "./node_modules/.bin/sequelize db:seed:all",
-    "migrate": "./node_modules/.bin/sequelize db:migrate"
+    "test": "jest --detectOpenHandles"
   },
-  "repository": "git+https://github.com/fracxn/api.git",
-  "keywords": [
-    "expense",
-    "api",
-    "portal"
-  ],
+  "repository": "https://github.com/LanreOlanipekun/youtube-api",
+  "keywords": [],
   "author": "Olanrewaju Olanipekun",
   "license": "ISC",
-  "bugs": {
-    "url": "https://bitbucket.org/vfddevteam/nodejs-api-template/src/master-v2"
-  },
-  "homepage": "https://bitbucket.org/vfddevteam/nodejs-api-template#readme",
+  "bugs": {},
+  "homepage": "https://github.com/LanreOlanipekun/youtube-api/blob/master/README.md",
   "dependencies": {
     "body-parser": "^1.20.2",
     "cookie": "^0.5.0",

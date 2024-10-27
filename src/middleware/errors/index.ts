@@ -13,7 +13,6 @@ class Errors {
     err: ErrorInterface,
     req: express.Request,
     res: express.Response,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     next: express.NextFunction
   ): void {
     try {

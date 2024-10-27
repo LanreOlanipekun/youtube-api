@@ -6,7 +6,7 @@ import secret from '../../../modules/secret';
 import { getQueryString } from '../../../utils';
 import { IVideoComments, IVideoDetails } from './interface';
 
-export class YoutubeService {
+class YoutubeService {
   private http: Http;
   private apiKey: string;
 

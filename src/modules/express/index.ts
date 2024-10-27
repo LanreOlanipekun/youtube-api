@@ -54,8 +54,8 @@ class Express {
     );
 
     const limiter = rateLimit({
-      windowMs: 60000, //config.rateLimiter.time,
-      max: 10, //config.rateLimiter.maxNumberOfRequest,
+      windowMs: config.rateLimiter.time,
+      max: config.rateLimiter.maxNumberOfRequest,
       standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
       legacyHeaders: false, // Disable the `X-RateLimit-*` headers
       handler: (req, res, next, options) =>

@@ -12,6 +12,10 @@ export default {
     },
     timeout: 30000,
   },
+  rateLimiter: {
+    time: 60000,
+    maxNumberOfRequest: 100,
+  },
 
   swagger: {
     route: '/api/docs',

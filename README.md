@@ -1,43 +1,92 @@
 # README
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This README documents whatever steps are necessary to get your application up and running.
 
 ### What is this repository for?
 
-- Quick summary: An API generator that helps in generating crud endpoints from the terminal
-- Version: 2.0.0
+- Quick summary: APIs for getting youtube video details and comments
+- Version: 1.0.0
 
-### How do I get set up?
+## Table of Contents
+
+- [Installation](#installation)
+- [Available Scripts](#available-scripts)
+- [Project Structure](#project-structure)
+- [Technologies Used](#technologies-used)
+
+---
 
 ## Installation
 
-$ git clone to clone the template
-$ cd <projectName>
-$ npm install
-$ npm install -g gulp
-$ create a .env file and add your database credentials
+1. Clone the repository:
 
-## Generate your first API endpoint
+   ```bash
+   git clone https://github.com/LanreOlanipekun/youtube-api
+   cd youtube-api
+
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+
+   ```
+
+3. Add environment variable
+
+Add the necessary environment variable in the .env file. Check .env.example
+
+## Available scripts
+
+1. Development
+
+### Starts the development server with Vite. The app will be accessible at http://localhost:<PORT>
+
+#### You can specify your port in the env file. check the .env.example
+
+```bash
+npm run dev
 
 ```
-$ gulp service --name yourFirstEndpoint // This command will create a CRUD endpoint for yourFirstEndpoint.
+
+2. Build
+
+### Builds the app for production. It first compiles TypeScript (tsc -b) and then bundles the project using Vite.
+
+```bash
+npm run build
+
 ```
 
-- `[POST] http://localhost:8080/yourFirstEndpoint` Create yourFirstEndpoint resources
-- `[GET] http://localhost:8080/yourFirstEndpoint` Get yourFirstEndpoint resources. Supports limit, pagination, search and date range
-- `[GET] http://localhost:8080/yourFirstEndpoint/:id` Get a yourFirstEndpoint resource
-- `[PUT] http://localhost:8080/yourFirstEndpoint` Update yourFirstEndpoint resources
-- `[PATCH] http://localhost:8080/yourFirstEndpoint/:id` Update one yourFirstEndpoint resource
-- `[DELETE] http://localhost:8080/yourFirstEndpoint/:id` Delete one yourFirstEndpoint resource
-- `[DELETE] http://localhost:8080/yourFirstEndpoint` Delete many yourFirstEndpoint resource
+3. build routes
 
-## Configuration
+### Generate all the swagger routes as specified in the controller
 
-# Versioning your API endpoints
+```bash
+npm run build-routes
 
-The template comes with route versioning. You can put the version name in front of the route eg. `resource.v1.ts` will put a version of the resource on the `/v1/resource` endpoint. `resource.v2.ts` will put a version of the resource resources on the `/v2/resource` endpoint. The latest version of the resources will always be available at the `/resource` endpoint.
+```
 
-> NOTE: Routes will be loaded automatically.
+4. start
+
+### Starts the app in production
+
+```bash
+npm start
+
+```
+
+5. test
+
+### Run available tests in the test folder
+
+```bash
+npm run test
+
+```
+
+## Project struture
 
 ## File Structure
 
@@ -54,31 +103,7 @@ The template comes with route versioning. You can put the version name in front 
 - templates
 - tests
 
-## Start template in development
+## Technology used
 
-run npm run dev
-
-## Start template in production
-
-run
-
-- npm run build
-- npm start
-
-* TODO: Add background workers
-* TODO: Complete test
-* Add deployment instruction using circleCI and docker
-
-<!-- * How to run tests
-* Deployment instructions -->
-
-### Contribution guidelines
-
-- Writing tests
-- Code review
-- Other guidelines
-
-### Who do I talk to?
-
-- Repo owner or admin
-- Other community or team contact
+- Node Js
+- TypeScript: A typed superset of JavaScript

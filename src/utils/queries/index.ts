@@ -1,14 +1,6 @@
 import _ from 'lodash';
-import { Op, Sequelize, WhereOptions } from 'sequelize';
+import { FindAndCountOptions, Model, Op } from 'sequelize';
 import { IPagination, IQuery, IQueryData } from './interface';
-import { Model, FindAndCountOptions } from 'sequelize';
-import fs from 'fs';
-import secret from './../../modules/secret';
-
-export enum ExportEnum {
-  PDF = 'pdf',
-  EXCEL = 'excel',
-}
 
 const buildProjection = async (projections: string) => {
   const projection = projections.split(','); // Projection should be comma separated. eg. name,location

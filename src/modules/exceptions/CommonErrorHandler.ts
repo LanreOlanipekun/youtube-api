@@ -71,6 +71,14 @@ export class CommonErrorHandler extends ErrorHandler {
     };
   }
 
+  public static get NotFound(): ErrorInterface {
+    return {
+      status: 404,
+      code: 'NOT_FOUND',
+      message: 'Not found',
+    };
+  }
+
   public static get ValidationFailed(): ErrorInterface {
     return {
       status: 400,
